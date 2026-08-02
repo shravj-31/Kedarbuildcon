@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kedar Buildcon | Builders &amp; Developers in Pune</title>
+<meta name="description" content="Kedar Buildcon - Trusted builders and developers offering residential, commercial, interior and turnkey construction services.">
+<link rel="icon" type="image/jpeg" href="images/images/kedar-buildcon-logo.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1C2126;
+    --ink-soft:#2A3138;
+    --concrete:#F2F0EC;
+    --concrete-dark:#E7E3DB;
+    --slate:#2E4057;
+    --brass:#C08A3E;
+    --brass-light:#D9A85C;
+    --white:#FFFFFF;
+    --text-muted:#6B7280;
+    --line:#DAD5C9;
+    --radius:2px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Source Sans 3', sans-serif;
+    color:var(--ink);
+    background:var(--concrete);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    line-height:1.15;
+    font-weight:600;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:13px;
+    color:var(--brass);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px;
+    height:2px;
+    background:var(--brass);
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-size:14px;
+    font-weight:600;
+    border-radius:var(--radius);
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:all .25s ease;
+  }
+  .btn-primary{background:var(--brass);color:var(--ink);}
+  .btn-primary:hover{background:var(--brass-light);}
+  .btn-outline{border-color:rgba(255,255,255,0.4);color:var(--white);}
+  .btn-outline:hover{border-color:var(--brass);color:var(--brass);}
+  .btn-outline-dark{border-color:var(--ink);color:var(--ink);}
+  .btn-outline-dark:hover{border-color:var(--brass);color:var(--brass);}
+  section{padding:96px 0;}
+  @media(max-width:768px){section{padding:64px 0;}}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(28,33,38,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-row{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;
+    padding:14px 24px;max-width:1180px;margin:0 auto;
+  }
+  .nav-wrap{
+    display:flex;align-items:center;gap:32px;flex:1;
+    justify-content:flex-start;
+  }
+  .logo{
+    display:flex;align-items:center;gap:12px;color:var(--white);
+  }
+  .logo-chip{
+    background:var(--white);
+    padding:18px 32px;
+    display:flex;align-items:center;
+    border-radius:calc(var(--radius) * 1.5);
+    box-shadow:0 10px 24px rgba(0,0,0,0.12);
+  }
+  .logo-chip img{height:140px;width:auto;display:block;}
+  .logo-mark{
+    width:42px;height:42px;border:2px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Oswald',sans-serif;font-weight:700;color:var(--brass);
+    font-size:16px;letter-spacing:0.02em;
+  }
+  .logo-text{font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;letter-spacing:0.04em;}
+  .logo-text span{display:block;font-size:10px;letter-spacing:0.2em;color:var(--brass-light);font-weight:500;text-transform:uppercase;}
+  nav ul{display:flex;gap:32px;}
+  nav a{
+    color:var(--white);font-size:14px;text-transform:uppercase;
+    letter-spacing:0.06em;font-weight:500;
+    font-family:'Oswald',sans-serif;
+    position:relative;padding-bottom:4px;
+  }
+  nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+    background:var(--brass);transition:width .25s ease;
+  }
+  nav a:hover::after{width:100%;}
+  .header-right{display:flex;align-items:center;gap:24px;}
+  .header-phone{
+    color:var(--white);font-family:'Oswald',sans-serif;font-size:14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .header-phone strong{color:var(--brass-light);}
+  .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
+
+  @media(max-width:900px){
+    nav{position:fixed;top:74px;left:0;right:0;background:var(--ink);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    nav.open{max-height:400px;border-bottom:1px solid rgba(255,255,255,0.08);}
+    nav ul{flex-direction:column;gap:0;padding:8px 24px 20px;}
+    nav ul li{border-top:1px solid rgba(255,255,255,0.08);}
+    nav ul li a{display:block;padding:14px 0;}
+    .header-phone{display:none;}
+    .menu-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--white);
+    padding:170px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .container{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px,5vw,58px);
+    margin-bottom:22px;
+  }
+  .hero h1 em{font-style:normal;color:var(--brass);}
+  .hero p{
+    color:#C7CDD4;font-size:17px;max-width:480px;margin-bottom:36px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;}
+  .hero-stats{display:flex;gap:36px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.15);padding-top:28px;}
+  .hero-stats div strong{
+    font-family:'Oswald',sans-serif;font-size:30px;color:var(--brass-light);display:block;
+  }
+  .hero-stats div span{font-size:12.5px;color:#9AA3AC;text-transform:uppercase;letter-spacing:0.08em;}
+
+  .blueprint-wrap{position:relative;}
+  .blueprint-wrap svg{width:100%;height:auto;}
+  .bp-line{
+    fill:none;stroke:var(--brass-light);stroke-width:1.4;
+    stroke-dasharray:2200;stroke-dashoffset:2200;
+    animation:draw 3.2s ease forwards 0.3s;
+  }
+  .bp-line.thin{stroke:#4C5A68;stroke-width:1;}
+  .bp-grid line{stroke:rgba(255,255,255,0.06);stroke-width:1;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion: reduce){
+    .bp-line{animation:none;stroke-dashoffset:0;}
+  }
+  @media(max-width:900px){
+    .hero .container{grid-template-columns:1fr;}
+    .blueprint-wrap{order:-1;max-width:320px;margin:0 auto 20px;}
+  }
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{
+    background:var(--brass);color:var(--ink);
+    padding:14px 0;overflow:hidden;white-space:nowrap;
+  }
+  .strip-inner{display:inline-flex;animation:scroll 26s linear infinite;}
+  .strip-inner span{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
+    letter-spacing:0.08em;text-transform:uppercase;padding:0 28px;
+    border-right:1px solid rgba(28,33,38,0.3);
+  }
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- ABOUT ---------- */
+  .about .container{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+  .about-media{position:relative;}
+  .about-media img{border-radius:var(--radius);}
+  .about-media .badge{
+    position:absolute;bottom:-24px;right:-24px;
+    background:var(--ink);color:var(--white);
+    padding:22px 26px;
+    font-family:'Oswald',sans-serif;
+    border-left:4px solid var(--brass);
+  }
+  .about-media .badge strong{display:block;font-size:26px;color:var(--brass-light);}
+  .about-media .badge span{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#C7CDD4;}
+  .about h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:20px;}
+  .about p{color:var(--text-muted);margin-bottom:16px;max-width:560px;}
+  .about-points{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .about-points li{
+    display:flex;gap:10px;font-size:14.5px;font-weight:600;
+    font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.02em;font-size:13px;
+    align-items:center;
+  }
+  .about-points li::before{content:"";width:8px;height:8px;background:var(--brass);flex:none;}
+  @media(max-width:800px){.about .container{grid-template-columns:1fr;} .about-media{margin-bottom:20px;} .about-points{grid-template-columns:1fr;}}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--ink);color:var(--white);}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .services .section-head p{color:#AEB6BE;margin-top:14px;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.08);}
+  .service-card{
+    background:var(--ink-soft);padding:38px 32px;transition:background .25s ease;
+  }
+  .service-card:hover{background:#323B44;}
+  .service-num{font-family:'Oswald',sans-serif;color:var(--brass);font-size:13px;letter-spacing:0.1em;margin-bottom:18px;display:block;}
+  .service-card h3{font-size:19px;margin-bottom:12px;}
+  .service-card p{color:#9AA3AC;font-size:14.5px;}
+  @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.services-grid{grid-template-columns:1fr;}}
+
+  /* ---------- WHY US ---------- */
+  .why .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .why h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:20px;}
+  .why > .container > div:first-child p{color:var(--text-muted);max-width:460px;}
+  .why-list{display:flex;flex-direction:column;gap:0;}
+  .why-item{
+    display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line);
+  }
+  .why-item:last-child{border-bottom:1px solid var(--line);}
+  .why-icon{
+    width:46px;height:46px;flex:none;border:1px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;color:var(--brass);
+    font-family:'Oswald',sans-serif;font-weight:700;
+  }
+  .why-item h4{font-size:16px;margin-bottom:6px;text-transform:none;letter-spacing:0;}
+  .why-item p{color:var(--text-muted);font-size:14.5px;}
+  @media(max-width:800px){.why .container{grid-template-columns:1fr;}}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{background:var(--concrete-dark);}
+  .filter-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+  .filter-tabs button{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.06em;
+    font-size:13px;font-weight:600;padding:10px 20px;background:transparent;
+    border:1px solid var(--line);cursor:pointer;color:var(--ink);
+    transition:all .2s ease;
+  }
+  .filter-tabs button.active,.filter-tabs button:hover{background:var(--ink);color:var(--white);border-color:var(--ink);}
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .project-card{position:relative;overflow:hidden;background:#000;}
+  .project-card img{width:100%;height:280px;object-fit:cover;transition:transform .5s ease;}
+  .project-card:hover img{transform:scale(1.06);}
+  .project-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(28,33,38,0.92) 0%, rgba(28,33,38,0.1) 55%, transparent 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:var(--white);
+  }
+  .project-overlay span{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--brass-light);font-family:'Oswald',sans-serif;margin-bottom:6px;}
+  .project-overlay h4{font-size:17px;text-transform:none;letter-spacing:0;}
+  @media(max-width:900px){.projects-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.projects-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PROCESS ---------- */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .process-step{padding:0 24px;position:relative;}
+  .process-step::before{
+    content:attr(data-step);
+    font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;
+    color:var(--concrete-dark);-webkit-text-stroke:1px var(--brass);
+    display:block;margin-bottom:16px;
+  }
+  .process-step h4{font-size:16px;margin-bottom:10px;}
+  .process-step p{color:var(--text-muted);font-size:14px;}
+  @media(max-width:900px){.process-grid{grid-template-columns:1fr 1fr;row-gap:36px;}}
+  @media(max-width:600px){.process-grid{grid-template-columns:1fr;}}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{background:var(--slate);color:var(--white);}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .testi-card{background:rgba(255,255,255,0.06);padding:32px;border-top:3px solid var(--brass);}
+  .testi-card p{color:#DDE2E6;font-size:15px;margin-bottom:20px;}
+  .testi-who{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:44px;height:44px;border-radius:50%;background:var(--brass);
+    display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;
+    font-weight:700;color:var(--ink);
+  }
+  .testi-who strong{display:block;font-size:14.5px;}
+  .testi-who span{font-size:12.5px;color:#B7C0C8;}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    background:var(--brass);color:var(--ink);text-align:center;padding:70px 24px;
+  }
+  .cta-banner h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:16px;}
+  .cta-banner p{margin-bottom:30px;color:#3A2E1B;}
+  .cta-banner .btn-primary{background:var(--ink);color:var(--white);}
+  .cta-banner .btn-primary:hover{background:var(--ink-soft);}
+
+  /* ---------- CONTACT ---------- */
+  .contact .container{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;}
+  .contact-info h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:18px;}
+  .contact-info > p{color:var(--text-muted);margin-bottom:32px;max-width:400px;}
+  .info-row{display:flex;gap:16px;margin-bottom:26px;}
+  .info-icon{
+    width:44px;height:44px;flex:none;background:var(--ink);color:var(--brass);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .info-row strong{display:block;font-family:'Oswald',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;}
+  .info-row span,.info-row a{color:var(--text-muted);font-size:14.5px;}
+
+  .contact-form{background:var(--white);padding:40px;border:1px solid var(--line);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .contact-form label{
+    display:block;font-family:'Oswald',sans-serif;font-size:12px;text-transform:uppercase;
+    letter-spacing:0.08em;margin-bottom:8px;color:var(--text-muted);
+  }
+  .contact-form input,.contact-form select,.contact-form textarea{
+    width:100%;border:1px solid var(--line);background:var(--concrete);
+    padding:13px 14px;font-family:'Source Sans 3',sans-serif;font-size:14.5px;color:var(--ink);
+  }
+  .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{
+    outline:2px solid var(--brass);outline-offset:1px;background:var(--white);
+  }
+  .contact-form textarea{resize:vertical;min-height:110px;}
+  .full{grid-column:1/-1;}
+  .form-note{font-size:12.5px;color:var(--text-muted);margin-top:14px;}
+  @media(max-width:800px){.contact .container{grid-template-columns:1fr;} .form-row{grid-template-columns:1fr;}}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#B7BFC6;padding-top:70px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-logo{display:flex;align-items:center;gap:12px;color:var(--white);margin-bottom:16px;}
+  .footer-logo .logo-chip{padding:6px 14px;}
+  .footer-logo .logo-chip img{height:40px;}
+  footer h4{color:var(--white);font-size:14px;margin-bottom:18px;letter-spacing:0.06em;}
+  footer ul li{margin-bottom:10px;font-size:14.5px;}
+  footer ul li a:hover{color:var(--brass-light);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding:24px 0;
+    font-size:13px;color:#7C858D;flex-wrap:wrap;gap:10px;
+  }
+  .socials{display:flex;gap:12px;}
+  .socials a{
+    width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);
+    display:flex;align-items:center;justify-content:center;font-size:14px;
+    transition:all .2s ease;
+  }
+  .socials a:hover{border-color:var(--brass);color:var(--brass);}
+  @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .whatsapp-float{
+    position:fixed;bottom:26px;right:26px;z-index:90;
+    width:58px;height:58px;background:#25D366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);color:#fff;font-size:26px;
+  }
+
+  ::selection{background:var(--brass);color:var(--ink);}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="header-row">
+    <a href="#home" class="logo">
+      <div class="logo-chip">
+        <img src="images/images/kedar-buildcon-logo.jpeg" alt="Kedar Buildcon logo">
+      </div>
+    </a>
+    <div class="nav-wrap">
+      <nav id="siteNav">
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    </div>
+    <div class="header-right">
+      <div class="header-phone">Call us &nbsp;<strong>+91 8380008070</strong> / <strong>+ 91 9767778070</strong></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Builders &amp; Developers, Pune</div>
+      <h1>We build spaces that <em>stand the test of time</em></h1>
+      <p>Kedar Buildcon delivers residential, commercial and turnkey construction across Pune — engineered with precision, finished with care, and handed over on schedule.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+        <a href="#projects" class="btn btn-outline">View Our Projects</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>20+</strong><span>Years of Experience</span></div>
+        <div><strong>50+</strong><span>Projects Delivered</span></div>
+        <div><strong>5L+</strong><span>Sq. Ft. Constructed</span></div>
+        <div><strong>98%</strong><span>Client Satisfaction</span></div>
+      </div>
+    </div>
+
+    <div class="blueprint-wrap">
+      <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
+        <g class="bp-grid">
+          <line x1="0" y1="60" x2="480" y2="60"/><line x1="0" y1="120" x2="480" y2="120"/>
+          <line x1="0" y1="180" x2="480" y2="180"/><line x1="0" y1="240" x2="480" y2="240"/>
+          <line x1="0" y1="300" x2="480" y2="300"/><line x1="0" y1="360" x2="480" y2="360"/>
+          <line x1="60" y1="0" x2="60" y2="420"/><line x1="120" y1="0" x2="120" y2="420"/>
+          <line x1="180" y1="0" x2="180" y2="420"/><line x1="240" y1="0" x2="240" y2="420"/>
+          <line x1="300" y1="0" x2="300" y2="420"/><line x1="360" y1="0" x2="360" y2="420"/>
+          <line x1="420" y1="0" x2="420" y2="420"/>
+        </g>
+        <path class="bp-line" d="M60,360 L60,180 L150,120 L240,180 L240,360 Z" />
+        <path class="bp-line" d="M240,360 L240,150 L340,90 L420,150 L420,360 Z" />
+        <path class="bp-line thin" d="M90,360 L90,220 L120,220 L120,360" />
+        <path class="bp-line thin" d="M270,360 L270,260 L310,260 L310,360" />
+        <path class="bp-line thin" d="M350,360 L350,260 L390,260 L390,360" />
+        <path class="bp-line" d="M20,360 L460,360" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRIP ================= -->
+<div class="strip">
+  <div class="strip-inner">
+    <span>Residential Construction</span><span>Commercial Projects</span><span>Interior Fit-Outs</span>
+    <span>Renovation &amp; Remodeling</span><span>Turnkey Solutions</span><span>Project Consultancy</span>
+    <span>Residential Construction</span><span>Commercial Projects</span><span>Interior Fit-Outs</span>
+    <span>Renovation &amp; Remodeling</span><span>Turnkey Solutions</span><span>Project Consultancy</span>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-media">
+      <img src="images/images/apartment-swapnapurti-residency.png" alt="Swapnapurti Residency - completed project by Kedar Buildcon">
+      <div class="badge"><strong>15+</strong><span>Years Building Trust</span></div>
+    </div>
+    <div>
+      <div class="eyebrow">About Kedar Buildcon</div>
+      <h2>Construction built on precision &amp; a promise kept</h2>
+      <p>Kedar Buildcon is a Pune-based construction and development company built by engineers who believe a home or workplace should be as solid in build as it is in design. From the first site survey to the final handover, our in-house team manages structural work, interiors and finishing under one roof.</p>
+      <p>We've partnered with families, businesses and investors across Pune to deliver spaces that are structurally sound, thoughtfully planned, and completed within committed timelines.</p>
+      <ul class="about-points">
+        <li>Licensed &amp; Insured Team</li>
+        <li>Transparent Costing</li>
+        <li>In-House Architects</li>
+        <li>On-Time Handover</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>End-to-end construction services</h2>
+      <p>Every project, whether a single bungalow or a multi-storey commercial building, is run through the same disciplined process — planning, execution, quality checks and handover.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <h3>Residential Construction</h3>
+        <p>Bungalows, row houses and apartment buildings built to last, with material and structural quality you can inspect at every stage.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <h3>Commercial Construction</h3>
+        <p>Offices, showrooms and retail spaces designed for functionality, footfall and long-term durability.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <h3>Interior Fit-Outs</h3>
+        <p>Complete interior execution — false ceilings, modular kitchens, flooring and finishing carried out by our own crews.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <h3>Renovation &amp; Remodeling</h3>
+        <p>Structural repairs, extensions and full home makeovers, planned around your existing space and budget.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <h3>Turnkey Projects</h3>
+        <p>One point of contact from design to move-in — we coordinate every trade so you don't have to.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <h3>Project Consultancy</h3>
+        <p>Structural audits, cost estimation and planning support for landowners, builders and investors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="why">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Why Kedar Buildcon</div>
+      <h2>Built by engineers. Managed like a promise.</h2>
+      <p>We keep the number of moving parts small and the accountability high — one team, clear costing, and a schedule we hold ourselves to.</p>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-icon">01</div>
+        <div><h4>Fixed, transparent quotations</h4><p>No hidden costs — every material and labour line is shared before work begins.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">02</div>
+        <div><h4>In-house execution team</h4><p>Masons, electricians and finishing crews are our own — not subcontracted strangers.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">03</div>
+        <div><h4>Site quality checks</h4><p>Structural milestones are inspected and signed off before the next stage begins.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">04</div>
+        <div><h4>Timeline commitment</h4><p>Delivery dates are built into the contract, with weekly progress updates.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our Work</div>
+      <h2>Recent Projects</h2>
+    </div>
+    <div class="filter-tabs">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="apartments">Apartments</button>
+      <button data-filter="villas">Villas</button>
+      <button data-filter="ongoing">Ongoing Sites</button>
+      <button data-filter="planned">Planned Work</button>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project-card" data-cat="apartments">
+        <img src="images/images/apartment-sunrise.png" alt="Sunrise Apartments by Kedar Buildcon">
+        <div class="project-overlay"><span>Apartments</span></div>
+      </div>
+      <div class="project-card" data-cat="apartments">
+        <img src="images/images/apartment-riverside-residency.png" alt="Riverside Residency by Kedar Buildcon">
+        <div class="project-overlay"><span>Apartments</span></div>
+      </div>
+      <div class="project-card" data-cat="apartments">
+        <img src="images/images/apartment-urban-heights.png" alt="Urban Heights by Kedar Buildcon">
+        <div class="project-overlay"><span>Apartments</span></div>
+      </div>
+      <div class="project-card" data-cat="villas">
+        <img src="images/images/villa-royal-enclave.jpg" alt="Royal Enclave Villa by Kedar Buildcon">
+        <div class="project-overlay"><span>Villa</span></div>
+      </div>
+      <div class="project-card" data-cat="planned">
+        <img src="images/images/planned-work.webp" alt="Planned work layout by Kedar Buildcon">
+        <div class="project-overlay"><span>Planned Work</span></div>
+      </div>
+      <div class="project-card" data-cat="apartments">
+        <img src="images/images/apartment-skyline-towers.png" alt="Skyline Towers by Kedar Buildcon">
+        <div class="project-overlay"><span>Apartments</span></div>
+      </div>
+      <div class="project-card" data-cat="villas">
+        <img src="images/images/villa-meadow-view.png" alt="Meadow View Villa by Kedar Buildcon">
+        <div class="project-overlay"><span>Villa</span></div>
+      </div>
+      <div class="project-card" data-cat="apartments">
+        <img src="images/images/apartment-swapnapurti-residency.png" alt="Swapnapurti Residency by Kedar Buildcon">
+        <div class="project-overlay"><span>Apartments · Completed</span></div>
+      </div>
+      <div class="project-card" data-cat="ongoing">
+        <img src="images/images/site-under-construction.jpg" alt="Ongoing construction site by Kedar Buildcon">
+        <div class="project-overlay"><span>Ongoing Site</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">How We Work</div>
+      <h2>From site visit to handover</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step" data-step="01">
+        <h4>Consultation &amp; Site Survey</h4>
+        <p>We visit your site, understand requirements and budget, and map out feasibility.</p>
+      </div>
+      <div class="process-step" data-step="02">
+        <h4>Design &amp; Estimation</h4>
+        <p>Our architects prepare layouts and a fixed, itemised cost estimate.</p>
+      </div>
+      <div class="process-step" data-step="03">
+        <h4>Construction</h4>
+        <p>Execution begins with scheduled quality checks at every structural milestone.</p>
+      </div>
+      <div class="process-step" data-step="04">
+        <h4>Handover</h4>
+        <p>Final walkthrough, documentation and keys handed over on the committed date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--brass-light);">Client Feedback</div>
+      <h2>What our clients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"Kedar Buildcon delivered our bungalow exactly on the date promised. The costing had zero surprises — everything was as quoted."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">k</div>
+          <div><strong>Mr.Kamlesh Mehta</strong><span>Homeowner, PCMC</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"We opted them for our farmhouse fit-out. Professional crew, clean site management, and the finishing quality was excellent."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">V</div>
+          <div><strong>Mr.Vipul shah</strong><span>Business Owner, PCMC</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p>"Most trusted as they deliverd the our Apartment as planned abd very efficient and nice quality work."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">S</div>
+          <div><strong>Mr.Sambhaji Patil</strong><span>Investor, Katraj -Pune</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
+<div class="cta-banner">
+  <h2>Have a plot? Let's plan what gets built on it.</h2>
+  <p>Get a free consultation and a no-obligation cost estimate for your project.</p>
+  <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-info">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Let's talk about your project</h2>
+      <p>Fill out the form or reach us directly — our team typically responds within a few hours.</p>
+
+      <div class="info-row">
+        <div class="info-icon">&#9742;</div>
+        <div><strong>Phone</strong><a href="tel:+918380008070">+91 83800 08070</a><br><a href="tel:+919767778070">+91 97677 8070</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">&#9993;</div>
+        <div><strong>Email</strong><a href="mailto:info@kedarbuildcon.com">info@kedarbuildcon.com</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">&#128205;</div>
+        <div><strong>Office</strong><span>behind Bharati Vidhyapeeth - Pune – 411043
+
+        </span></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">&#128337;</div>
+        <div><strong>Working Hours</strong><span>Mon – Sat: 9:30 AM – 7:00 PM</span></div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div>
+          <label for="fname">Full Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com">
+        </div>
+        <div>
+          <label for="service">Service Required</label>
+          <select id="service" name="service">
+            <option>Residential Construction</option>
+            <option>Commercial Construction</option>
+            <option>Interior Fit-Out</option>
+            <option>Renovation / Remodeling</option>
+            <option>Turnkey Project</option>
+            <option>Consultancy</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="full">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Plot size, location, timeline..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary full" style="width:100%;justify-content:center;">Send Enquiry</button>
+      <p class="form-note">By submitting, you agree to be contacted by Kedar Buildcon regarding your enquiry.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-chip">
+            <img src="images/images/kedar-buildcon-logo.jpeg" alt="Kedar Buildcon logo">
+          </div>
+        </div>
+        <p style="max-width:280px;font-size:14px;">Builders and developers delivering residential, commercial and turnkey construction across Pune.</p>
+        <div class="socials" style="margin-top:20px;">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#projects">Our Projects</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Residential Construction</a></li>
+          <li><a href="#services">Commercial Construction</a></li>
+          <li><a href="#services">Interior Fit-Outs</a></li>
+          <li><a href="#services">Renovation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><strong>Proprietor:</strong> <strong>Sunil Jamdade</strong> &amp; <strong>Kedar Jamdade</strong></li>
+          <li>Behind Bharati Vidyapeeth, Katraj, Pune – 411043</li>
+          <li><a href="tel:+918380008070">+91 83800 08070</a></li>
+          <li><a href="tel:+919767778070">+91 97677 78070</a></li>
+          <li><a href="mailto:info@kedarbuildcon.com">info@kedarbuildcon.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Kedar Buildcon. All rights reserved.</span>
+      <span>Builders &amp; Developers, Pune</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918380008070" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">&#9742;</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const siteNav = document.getElementById('siteNav');
+  menuToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+  siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => siteNav.classList.remove('open')));
+
+  // Project filter
+  const tabs = document.querySelectorAll('.filter-tabs button');
+  const cards = document.querySelectorAll('.project-card');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  // Contact form (front-end only — connect to your backend / form service)
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you! Your enquiry has been noted. Our team will contact you shortly.\n\n(Connect this form to your email/CRM to actually receive submissions.)');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
